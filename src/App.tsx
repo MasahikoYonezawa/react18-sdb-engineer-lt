@@ -1,14 +1,17 @@
-import React from 'react';
-import './App.css';
-import {AutoBatchEventHandler} from "./components/AutoBatchEventHandler";
-import {AutoBatchOther} from "./components/AutoBatchOther";
+import React from "react";
+import "./App.css";
+import { AutoBatchEventHandler } from "./components/AutoBatchEventHandler";
+import { AutoBatchOther } from "./components/AutoBatchOther";
+import { Transition } from "./components/Transition";
 
 function App() {
-  console.log("Appがレンダリング！")
+  console.log("Appがレンダリング！");
   return (
     <div className="App">
-      <AutoBatchEventHandler/>
-      <AutoBatchOther/>
+      <AutoBatchEventHandler />
+      <AutoBatchOther />
+      <hr />
+      <Transition />
     </div>
   );
 }
