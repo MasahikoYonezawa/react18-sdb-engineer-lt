@@ -37,21 +37,31 @@ export const ReactQuery = () => {
     <div style={{ display: "flex", padding: "16px" }}>
       <Sidebar />
       <div style={{ flexGrow: 1 }}>
-        <ErrorBoundary fallback={<h1>Todo or AlbumListエラーだよ〜</h1>}>
-          <Suspense fallback={<p>Todo or AlbumListローディング中だよ〜</p>}>
-            <button
-              style={todoButtonStyle}
-              onClick={() => onClickTabButton("todo")}
-            >
-              Todo
-            </button>
-            <button
-              style={albumButtonStyle}
-              onClick={() => onClickTabButton("album")}
-            >
-              Album
-            </button>
-            {selectedTab === "todo" ? <TodoList /> : <AlbumList />}
+        {/*<ErrorBoundary fallback={<p>Todo or AlbumListエラーだよ〜</p>}>*/}
+        {/*  <Suspense fallback={<p>Todo or AlbumListローディング中だよ〜</p>}>*/}
+        {/*    <button*/}
+        {/*      style={todoButtonStyle}*/}
+        {/*      onClick={() => onClickTabButton("todo")}*/}
+        {/*    >*/}
+        {/*      Todo*/}
+        {/*    </button>*/}
+        {/*    <button*/}
+        {/*      style={albumButtonStyle}*/}
+        {/*      onClick={() => onClickTabButton("album")}*/}
+        {/*    >*/}
+        {/*      Album*/}
+        {/*    </button>*/}
+        {/*    {selectedTab === "todo" ? <TodoList /> : <AlbumList />}*/}
+        {/*  </Suspense>*/}
+        {/*</ErrorBoundary>*/}
+        <ErrorBoundary fallback={<p>Todoエラーだよ〜</p>}>
+          <Suspense fallback={<p>Todoローディング中だよ〜</p>}>
+            <TodoList />
+          </Suspense>
+        </ErrorBoundary>
+        <ErrorBoundary fallback={<p>AlbumListエラーだよ〜</p>}>
+          <Suspense fallback={<p>AlbumListローディング中だよ〜</p>}>
+            <AlbumList />
           </Suspense>
         </ErrorBoundary>
       </div>
