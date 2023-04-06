@@ -42,6 +42,7 @@ export const Transition = () => {
   const [isPending, startTransition] = useTransition();
   const [selectedAssignee, setSelectedAssignee] = useState<string>("");
   const [taskList, setTaskList] = useState<Task[]>(tasks);
+  const [isShowList, setIsShowList] = useState<boolean>(false);
 
   const onClickAssignee = (assignee: string) => {
     setSelectedAssignee(assignee);
@@ -76,21 +77,25 @@ export const Transition = () => {
       </div>
       <br />
       <button onClick={() => onClickAssignee("")}>リセット</button>
-      {/*<TaskList taskList={taskList} />*/}
-      {taskList.map((task) => (
-        <div
-          key={task.id}
-          style={{
-            width: "300px",
-            margin: "auto",
-            background: "lavender",
-            opacity: isPending ? 0.5 : 1,
-          }}
-        >
-          <p>タイトル：{task.title}</p>
-          <p>担当：{task.assignee}</p>
-        </div>
-      ))}
+      <br />
+      <br />
+      <button onClick={() => setIsShowList(!isShowList)}>表示/非表示</button>
+      {/*{isShowList && <TaskList taskList={taskList} />}*/}
+      {isShowList &&
+        taskList.map((task) => (
+          <div
+            key={task.id}
+            style={{
+              width: "300px",
+              margin: "auto",
+              background: "lavender",
+              opacity: isPending ? 0.5 : 1,
+            }}
+          >
+            <p>タイトル：{task.title}</p>
+            <p>担当：{task.assignee}</p>
+          </div>
+        ))}
     </div>
   );
 };
