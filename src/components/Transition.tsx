@@ -45,10 +45,10 @@ export const Transition = () => {
 
   const onClickAssignee = (assignee: string) => {
     setSelectedAssignee(assignee);
-    startTransition(() => {
-      setTaskList(filteringAssignee(assignee));
-    });
-    // setTaskList(filteringAssignee(assignee));
+    // startTransition(() => {
+    //   setTaskList(filteringAssignee(assignee));
+    // });
+    setTaskList(filteringAssignee(assignee));
   };
 
   return (
