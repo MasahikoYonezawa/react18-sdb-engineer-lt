@@ -17,7 +17,6 @@ export const TaskList = memo(({ taskList }: Props) => {
             width: "300px",
             margin: "auto",
             background: "lavender",
-            // opacity: isPending ? 0.5 : 1
           }}
         >
           <p>タイトル：{task.title}</p>

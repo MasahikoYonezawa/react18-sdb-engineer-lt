@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { Avatar } from "./Avatar";
 import { TaskList } from "./TaskList";
 
@@ -39,12 +39,16 @@ const filteringAssignee = (assignee: string) => {
 };
 
 export const Transition = () => {
+  const [isPending, startTransition] = useTransition();
   const [selectedAssignee, setSelectedAssignee] = useState<string>("");
   const [taskList, setTaskList] = useState<Task[]>(tasks);
 
   const onClickAssignee = (assignee: string) => {
     setSelectedAssignee(assignee);
-    setTaskList(filteringAssignee(assignee));
+    startTransition(() => {
+      setTaskList(filteringAssignee(assignee));
+    });
+    // setTaskList(filteringAssignee(assignee));
   };
 
   return (
@@ -72,7 +76,21 @@ export const Transition = () => {
       </div>
       <br />
       <button onClick={() => onClickAssignee("")}>リセット</button>
-      <TaskList taskList={taskList} />
+      {/*<TaskList taskList={taskList} />*/}
+      {taskList.map((task) => (
+        <div
+          key={task.id}
+          style={{
+            width: "300px",
+            margin: "auto",
+            background: "lavender",
+            opacity: isPending ? 0.5 : 1,
+          }}
+        >
+          <p>タイトル：{task.title}</p>
+          <p>担当：{task.assignee}</p>
+        </div>
+      ))}
     </div>
   );
 };
