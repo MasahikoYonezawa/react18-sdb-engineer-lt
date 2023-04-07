@@ -37,8 +37,8 @@ export const ReactQuery = () => {
     <div style={{ display: "flex", padding: "16px" }}>
       <Sidebar />
       <div style={{ flexGrow: 1 }}>
-        {/*<ErrorBoundary fallback={<p>Todo or AlbumListエラーだよ〜</p>}>*/}
-        {/*  <Suspense fallback={<p>Todo or AlbumListローディング中だよ〜</p>}>*/}
+        {/*<ErrorBoundary fallback={<p>Todo or AlbumListエラー</p>}>*/}
+        {/*  <Suspense fallback={<p>Todo or AlbumListローディング中</p>}>*/}
         {/*    <button*/}
         {/*      style={todoButtonStyle}*/}
         {/*      onClick={() => onClickTabButton("todo")}*/}
@@ -54,13 +54,13 @@ export const ReactQuery = () => {
         {/*    {selectedTab === "todo" ? <TodoList /> : <AlbumList />}*/}
         {/*  </Suspense>*/}
         {/*</ErrorBoundary>*/}
-        <ErrorBoundary fallback={<p>Todoエラーだよ〜</p>}>
-          <Suspense fallback={<p>Todoローディング中だよ〜</p>}>
+        <ErrorBoundary fallback={<p>Todoエラー</p>}>
+          <Suspense fallback={<p>Todoローディング中</p>}>
             <TodoList />
           </Suspense>
         </ErrorBoundary>
-        <ErrorBoundary fallback={<p>AlbumListエラーだよ〜</p>}>
-          <Suspense fallback={<p>AlbumListローディング中だよ〜</p>}>
+        <ErrorBoundary fallback={<p>AlbumListエラー</p>}>
+          <Suspense fallback={<p>AlbumListローディング中</p>}>
             <AlbumList />
           </Suspense>
         </ErrorBoundary>

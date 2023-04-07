@@ -15,8 +15,8 @@ function App() {
       <hr />
       <Transition />
       <hr />
-      <ErrorBoundary fallback={<p>全体エラーだよ〜</p>}>
-        <Suspense fallback={<p>全体ローディング中だよ</p>}>
+      <ErrorBoundary fallback={<p>全体エラー</p>}>
+        <Suspense fallback={<p>全体ローディング中</p>}>
           <ReactQuery />
         </Suspense>
       </ErrorBoundary>
