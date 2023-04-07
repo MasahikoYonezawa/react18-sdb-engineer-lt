@@ -54,16 +54,16 @@ export const ReactQuery = () => {
         {/*    {selectedTab === "todo" ? <TodoList /> : <AlbumList />}*/}
         {/*  </Suspense>*/}
         {/*</ErrorBoundary>*/}
-        <ErrorBoundary fallback={<p>Todoエラー</p>}>
-          <Suspense fallback={<p>Todoローディング中</p>}>
-            <TodoList />
-          </Suspense>
-        </ErrorBoundary>
-        <ErrorBoundary fallback={<p>AlbumListエラー</p>}>
-          <Suspense fallback={<p>AlbumListローディング中</p>}>
-            <AlbumList />
-          </Suspense>
-        </ErrorBoundary>
+        {/*<ErrorBoundary fallback={<p>Todoエラー</p>}>*/}
+        {/*  <Suspense fallback={<p>Todoローディング中</p>}>*/}
+        <TodoList />
+        {/*</Suspense>*/}
+        {/*</ErrorBoundary>*/}
+        {/*<ErrorBoundary fallback={<p>AlbumListエラー</p>}>*/}
+        {/*  <Suspense fallback={<p>AlbumListローディング中</p>}>*/}
+        <AlbumList />
+        {/*  </Suspense>*/}
+        {/*</ErrorBoundary>*/}
       </div>
     </div>
   );
